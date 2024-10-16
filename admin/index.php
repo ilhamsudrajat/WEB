@@ -10,19 +10,17 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
 ?>
 <a href="logout.php">Logout</a>
 <html>
- <head>
-  <title>
-   ilhjam
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-  <style>
-   body {
+<head>
+    <title>HAMS</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+        body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
             background-color: #0d0d0d;
             color: #ffffff;
-        }
+        }     
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -37,6 +35,9 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
         .navbar .menu {
             display: flex;
             gap: 20px;
+            flex-grow: 1;
+            justify-content: center; 
+            align-items: center;
         }
         .navbar .menu a {
             text-decoration: none;
@@ -47,6 +48,26 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
         .navbar .menu a.active, .navbar .menu a:hover {
             background-color: #ffffff;
             color: #0d0d0d;
+        }
+        .navbar .search {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .search input {
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            width: 200px;
+        }
+        .navbar .search button {
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            background-color: #ffffff;
+            color: #0d0d0d;
+            cursor: pointer;
+            margin-left: 5px;
         }
         .navbar .auth {
             display: flex;
@@ -62,132 +83,90 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
             background-color: #ffffff;
             color: #0d0d0d;
         }
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-        }
-        .hero .tagline {
-            font-size: 14px;
-            color: #b3b3b3;
-            margin-bottom: 20px;
-        }
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 18px;
-            color: #b3b3b3;
-            margin-bottom: 40px;
-        }
-        .hero .cta {
-            padding: 15px 30px;
-            background-color: #ffffff;
-            color: #0d0d0d;
-            border: none;
-            border-radius: 30px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .carousel {
+        .produk-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 50px 20px;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            padding: 20px; 
         }
-        .carousel .arrow {
-            font-size: 24px;
-            cursor: pointer;
+        .produk-container :hover{
+            transform: scale(1.05);
         }
-        .carousel .item {
-            width: 150px;
+        .produk {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 250px;
             text-align: center;
+            padding: 10px;
+            margin: 16px;
         }
-        .carousel .item img {
+        .produk img {
             width: 100%;
-            border-radius: 50%;
+            border-radius: 8px;
         }
-        .carousel .item .price {
-            margin-top: 10px;
+        .produk-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 16px 0 8px;
+            color: #0d0d0d;
+        }
+        .produk-price {
+            color: #888888;
             font-size: 14px;
-            color: #b3b3b3;
+            margin-bottom: 16px;
         }
-        .carousel .item .price span {
+        .produk-button {
+            background-color:#0d0d0d;
             color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
         }
-  </style>
- </head>
- <body>
-  <div class="navbar">
-   <div class="logo">
-    CHICX
+        .produk-button:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            HAMS
+        </div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Kategori</a>
+            <a href="#">About</a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button type="button"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="auth">
+            <a class="login" href="login.php">Login</a>
+            <a class="login" href="register.php">Sign up</a>
+        </div>
+    </div>
+    <div class="produk-container">
+    <a href="detail-produk.php">
+    <div class="produk">
+   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
+   <div class="produk-title">
+    Seni Membangun Personal Branding
    </div>
-   <div class="menu">
-    <a href="#">
-     Home
-    </a>
-    <a href="#">
-     Kategori
-    </a>
-    <a href="#">
-     About
-    </a>
+   <div class="produk-price">
+    Rp130.000
    </div>
-   <div class="auth">
-    <a class="login" href="login.php">
-     Login
-    </a>
-    <a class="login" href="register.php">
-     Sign up
-    </a>
-   </div>
-  </div>
-  <div class="hero">
-   <div class="tagline">
-    New spring collection 2023
-   </div>
-   <h1>
-    Where style speaks, trends resonate, fashion flourishes
-   </h1>
-   <p>
-    Unveiling a fashion destination where trends blend seamlessly with your individual style aspirations. Discover today!
-   </p>
-   <button class="cta">
-    New collection
+   <button class="produk-button">
+    Beli Sekarang
    </button>
   </div>
-  <div class="carousel">
-   <div class="arrow">
-    <i class="fas fa-chevron-left">
-    </i>
-   </div>
-   <div class="item">
-    <img alt="Fashion model in brown outfit" height="150" src="https://storage.googleapis.com/a1aa/image/MfchmeZ0iyktckFrraHaADWRe9DofIEFqletxfMoa31wXmY5E.jpg" width="150"/>
-   </div>
-   <div class="item">
-    <img alt="Fashion model in blue and orange outfit" height="150" src="https://storage.googleapis.com/a1aa/image/DsTdQgXQaELRJpj0LUh8e6XeSQyUNaCMQ9L0268xfLzEzELnA.jpg" width="150"/>
-   </div>
-   <div class="item">
-    <img alt="Fashion model in white outfit with hat" height="150" src="https://storage.googleapis.com/a1aa/image/Qg77b707Vv4fVqDKdxgLYpxzXejbQXuAYPWaMO9Y11skZilTA.jpg" width="150"/>
-    <div class="price">
-     Price for all
-     <span>
-      400$
-     </span>
-    </div>
-   </div>
-   <div class="item">
-    <img alt="Fashion model in red hoodie" height="150" src="https://storage.googleapis.com/a1aa/image/VF4QpYDrGwoZAh4CCKrGsVYP1lIzaG3DVJ9LN1K53eLwMxyJA.jpg" width="150"/>
-   </div>
-   <div class="item">
-    <img alt="Fashion model in white outfit" height="150" src="https://storage.googleapis.com/a1aa/image/N6tPFUaIp16mFJDyesmIWtpS1crFyF7IJfv1CYYODsTjZilTA.jpg" width="150"/>
-   </div>
-   <div class="arrow">
-    <i class="fas fa-chevron-right">
-    </i>
-   </div>
+  </a>
   </div>
  </body>
+</html>
+</body>
 </html>
