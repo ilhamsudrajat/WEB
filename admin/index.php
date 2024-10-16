@@ -102,6 +102,7 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
             margin: 16px;
         }
         .produk img {
+            height: 300PX;
             width: 100%;
             border-radius: 8px;
         }
@@ -151,6 +152,132 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
         </div>
     </div>
     <div class="produk-container">
+    <a href="detail-produk.php">
+    <div class="produk">
+   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
+   <div class="produk-title">
+    Seni Membangun Personal Branding
+   </div>
+   <div class="produk-price">
+    Rp130.000
+   </div>
+   <button class="produk-button">
+    Beli Sekarang
+   </button>
+  </div>
+  </a>
+    <a href="detail-produk.php">
+    <div class="produk">
+   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
+   <div class="produk-title">
+    Seni Membangun Personal Branding
+   </div>
+   <div class="produk-price">
+    Rp130.000
+   </div>
+   <button class="produk-button">
+    Beli Sekarang
+   </button>
+  </div>
+  </a>
+    <a href="detail-produk.php">
+    <div class="produk">
+   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
+   <div class="produk-title">
+    Seni Membangun Personal Branding
+   </div>
+   <div class="produk-price">
+    Rp130.000
+   </div>
+   <button class="produk-button">
+    Beli Sekarang
+   </button>
+  </div>
+  </a>
+    <a href="detail-produk.php">
+    <div class="produk">
+   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
+   <div class="produk-title">
+    Seni Membangun Personal Branding
+   </div>
+   <div class="produk-price">
+    Rp130.000
+   </div>
+   <button class="produk-button">
+    Beli Sekarang
+   </button>
+  </div>
+  </a>
+    <a href="detail-produk.php">
+    <div class="produk">
+   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
+   <div class="produk-title">
+    Seni Membangun Personal Branding
+   </div>
+   <div class="produk-price">
+    Rp130.000
+   </div>
+   <button class="produk-button">
+    Beli Sekarang
+   </button>
+  </div>
+  </a>
+    <a href="detail-produk.php">
+    <div class="produk">
+   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
+   <div class="produk-title">
+    Seni Membangun Personal Branding
+   </div>
+   <div class="produk-price">
+    Rp130.000
+   </div>
+   <button class="produk-button">
+    Beli Sekarang
+   </button>
+  </div>
+  </a>
+    <a href="detail-produk.php">
+    <div class="produk">
+   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
+   <div class="produk-title">
+    Seni Membangun Personal Branding
+   </div>
+   <div class="produk-price">
+    Rp130.000
+   </div>
+   <button class="produk-button">
+    Beli Sekarang
+   </button>
+  </div>
+  </a>
+    <a href="detail-produk.php">
+    <div class="produk">
+   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
+   <div class="produk-title">
+    Seni Membangun Personal Branding
+   </div>
+   <div class="produk-price">
+    Rp130.000
+   </div>
+   <button class="produk-button">
+    Beli Sekarang
+   </button>
+  </div>
+  </a>
+    <a href="detail-produk.php">
+    <div class="produk">
+   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
+   <div class="produk-title">
+    Seni Membangun Personal Branding
+   </div>
+   <div class="produk-price">
+    Rp130.000
+   </div>
+   <button class="produk-button">
+    Beli Sekarang
+   </button>
+  </div>
+  </a>
     <a href="detail-produk.php">
     <div class="produk">
    <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
