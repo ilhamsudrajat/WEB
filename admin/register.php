@@ -107,7 +107,6 @@ $conn->close();
         <label for="password">Password:</label><br>
         <input type="password" name="password" required><br>
         <button type="submit" value="Registrasi">Sign up</button>
-        <button type="submit" value="login">Sign in</button>
     </form>
     <p>Sudah memiliki akun? <a href="login.php"> Sign in</a></p>
     </div>

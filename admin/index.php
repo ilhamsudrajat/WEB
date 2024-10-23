@@ -8,7 +8,6 @@ if (!isset($_SESSION['username'])) {
 
 echo "Selamat datang, " . $_SESSION['username'] . "!";
 ?>
-<a href="logout.php">Logout</a>
 <html>
 <head>
     <title>HAMS</title>
@@ -130,6 +129,43 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
         .produk-button:hover {
             background-color: gray;
         }
+        .navbar .profile {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .navbar .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .navbar .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #ffffff;
+            color: #0d0d0d;
+            min-width: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .navbar .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #0d0d0d;
+        }
+        .navbar .dropdown a:hover {
+            background-color: #C0C0C0;
+        }
+
+        .navbar .dropdown {
+          display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -146,10 +182,15 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
             <input type="text" placeholder="Search...">
             <button type="button"><i class="fas fa-search"></i></button>
         </div>
-        <div class="auth">
-            <a class="login" href="login.php">Login</a>
-            <a class="login" href="register.php">Sign up</a>
-        </div>
+        <div class="profile" onclick="toggleDropdown()">
+    <img src="https://i.pravatar.cc/300" alt="Profile">
+    <div class="dropdown" id="dropdownMenu">
+        <a href="login.php">Sign In</a>
+        <a href="register.php">Sign Up</a>
+        <a href="logout.php">Logout</a>
+    </div>
+</div>
+
     </div>
     <div class="produk-container">
     <a href="detail-produk.php">
@@ -293,6 +334,24 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
   </div>
   </a>
   </div>
+  <script>
+    function toggleDropdown() {
+        const dropdown = document.getElementById('dropdownMenu');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.profile img')) {
+            const dropdowns = document.getElementsByClassName('dropdown');
+            for (let i = 0; i < dropdowns.length; i++) {
+                const openDropdown = dropdowns[i];
+                if (openDropdown.style.display === 'block') {
+                    openDropdown.style.display = 'none';
+                }
+            }
+        }
+    };
+</script>
+
  </body>
 </html>
 </body>
