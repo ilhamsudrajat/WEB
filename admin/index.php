@@ -19,6 +19,7 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
             font-family: 'Poppins', sans-serif;
             background-color: #0d0d0d;
             color: #ffffff;
+            padding-top: 80px; /* Beri padding-top untuk menghindari overlap dengan navbar */
         }     
         .navbar {
             display: flex;
@@ -26,6 +27,10 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
             align-items: center;
             padding: 20px 50px;
             background-color: #0d0d0d;
+            position: fixed;
+            width: 100%;
+            top: 0;
+          
         }
         .navbar .logo {
             font-size: 24px;
@@ -51,6 +56,7 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
         .navbar .search {
             display: flex;
             align-items: center;
+            margin-right: 100px; /* Tambahkan margin kanan untuk memberi jarak dari profil */
         }
         .navbar .search input {
             padding: 10px;
@@ -68,27 +74,14 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
             cursor: pointer;
             margin-left: 5px;
         }
-        .navbar .auth {
-            display: flex;
-            gap: 20px;
-        }
-        .navbar .auth a {
-            text-decoration: none;
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 20px;
-        }
-        .navbar .auth a.signup, .navbar .auth a:hover {
-            background-color: #ffffff;
-            color: #0d0d0d;
-        }
         .produk-container {
             display: flex;
             flex-wrap: wrap; 
             justify-content: center; 
-            padding: 20px; 
+            padding: 20px;
+            margin-top: 20px; /* Tambahkan jarak antara navbar dan produk */
         }
-        .produk-container :hover{
+        .produk-container :hover {
             transform: scale(1.05);
         }
         .produk {
@@ -101,7 +94,7 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
             margin: 16px;
         }
         .produk img {
-            height: 300PX;
+            height: 300px;
             width: 100%;
             border-radius: 8px;
         }
@@ -134,11 +127,14 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
             display: flex;
             align-items: center;
             cursor: pointer;
+            right: 5%;
+            
         }
         .navbar .profile img {
-            width: 40px;
+            width:  40px;
             height: 40px;
             border-radius: 50%;
+            
         }
         .navbar .dropdown {
             display: none;
@@ -161,18 +157,11 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
         .navbar .dropdown a:hover {
             background-color: #C0C0C0;
         }
-
-        .navbar .dropdown {
-          display: none;
-        }
-
     </style>
 </head>
 <body>
     <div class="navbar">
-        <div class="logo">
-            HAMS
-        </div>
+        <div class="logo">HAMS</div>
         <div class="menu">
             <a href="#">Home</a>
             <a href="#">Kategori</a>
@@ -183,176 +172,55 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
             <button type="button"><i class="fas fa-search"></i></button>
         </div>
         <div class="profile" onclick="toggleDropdown()">
-    <img src="https://i.pravatar.cc/300" alt="Profile">
-    <div class="dropdown" id="dropdownMenu">
-        <a href="login.php">Sign In</a>
-        <a href="register.php">Sign Up</a>
-        <a href="logout.php">Logout</a>
-    </div>
-</div>
-
+            <img src="https://i.pravatar.cc/300" alt="Profile">
+            <div class="dropdown" id="dropdownMenu">
+                <a href=>Profil</a>
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
     </div>
     <div class="produk-container">
-    <a href="detail-produk.php">
-    <div class="produk">
-   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
-   <div class="produk-title">
-    Seni Membangun Personal Branding
-   </div>
-   <div class="produk-price">
-    Rp130.000
-   </div>
-   <button class="produk-button">
-    Beli Sekarang
-   </button>
-  </div>
-  </a>
-    <a href="detail-produk.php">
-    <div class="produk">
-   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
-   <div class="produk-title">
-    Seni Membangun Personal Branding
-   </div>
-   <div class="produk-price">
-    Rp130.000
-   </div>
-   <button class="produk-button">
-    Beli Sekarang
-   </button>
-  </div>
-  </a>
-    <a href="detail-produk.php">
-    <div class="produk">
-   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
-   <div class="produk-title">
-    Seni Membangun Personal Branding
-   </div>
-   <div class="produk-price">
-    Rp130.000
-   </div>
-   <button class="produk-button">
-    Beli Sekarang
-   </button>
-  </div>
-  </a>
-    <a href="detail-produk.php">
-    <div class="produk">
-   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
-   <div class="produk-title">
-    Seni Membangun Personal Branding
-   </div>
-   <div class="produk-price">
-    Rp130.000
-   </div>
-   <button class="produk-button">
-    Beli Sekarang
-   </button>
-  </div>
-  </a>
-    <a href="detail-produk.php">
-    <div class="produk">
-   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
-   <div class="produk-title">
-    Seni Membangun Personal Branding
-   </div>
-   <div class="produk-price">
-    Rp130.000
-   </div>
-   <button class="produk-button">
-    Beli Sekarang
-   </button>
-  </div>
-  </a>
-    <a href="detail-produk.php">
-    <div class="produk">
-   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
-   <div class="produk-title">
-    Seni Membangun Personal Branding
-   </div>
-   <div class="produk-price">
-    Rp130.000
-   </div>
-   <button class="produk-button">
-    Beli Sekarang
-   </button>
-  </div>
-  </a>
-    <a href="detail-produk.php">
-    <div class="produk">
-   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
-   <div class="produk-title">
-    Seni Membangun Personal Branding
-   </div>
-   <div class="produk-price">
-    Rp130.000
-   </div>
-   <button class="produk-button">
-    Beli Sekarang
-   </button>
-  </div>
-  </a>
-    <a href="detail-produk.php">
-    <div class="produk">
-   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
-   <div class="produk-title">
-    Seni Membangun Personal Branding
-   </div>
-   <div class="produk-price">
-    Rp130.000
-   </div>
-   <button class="produk-button">
-    Beli Sekarang
-   </button>
-  </div>
-  </a>
-    <a href="detail-produk.php">
-    <div class="produk">
-   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
-   <div class="produk-title">
-    Seni Membangun Personal Branding
-   </div>
-   <div class="produk-price">
-    Rp130.000
-   </div>
-   <button class="produk-button">
-    Beli Sekarang
-   </button>
-  </div>
-  </a>
-    <a href="detail-produk.php">
-    <div class="produk">
-   <img alt="Book cover with a smiling man and the text 'Seni Membangun PERSONAL Branding By Arya Mustafa'" height="350" src="https://storage.googleapis.com/a1aa/image/LkFMiwfU8cwcfUKwJGCJJWZXfBQyeZwbjMGdsUqoLAuFv3cOB.jpg" width="250"/>
-   <div class="produk-title">
-    Seni Membangun Personal Branding
-   </div>
-   <div class="produk-price">
-    Rp130.000
-   </div>
-   <button class="produk-button">
-    Beli Sekarang
-   </button>
-  </div>
-  </a>
-  </div>
-  <script>
-    function toggleDropdown() {
-        const dropdown = document.getElementById('dropdownMenu');
-        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    }
-    window.onclick = function(event) {
-        if (!event.target.matches('.profile img')) {
-            const dropdowns = document.getElementsByClassName('dropdown');
-            for (let i = 0; i < dropdowns.length; i++) {
-                const openDropdown = dropdowns[i];
-                if (openDropdown.style.display === 'block') {
-                    openDropdown.style.display = 'none';
+        <?php
+        include 'koneksi.php';
+
+        $sql = "SELECT * FROM tb_produk";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                ?>
+                <a href="detail-produk.php?id=<?php echo $row['id']; ?>">
+                    <div class="produk">
+                        <img src="uploads/<?php echo $row['foto']; ?>" alt="<?php echo $row['nama']; ?>">
+                        <div class="produk-title"><?php echo $row['nama']; ?></div>
+                        <div class="produk-price">Rp<?php echo number_format($row['harga'], 0, ',', '.'); ?></div>
+                        <button class="produk-button">Beli Sekarang</button>
+                    </div>
+                </a>
+                <?php
+            }
+        } else {
+            echo "<p>Produk tidak tersedia</p>";
+        }
+        $conn->close();
+        ?>
+    </div>
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile img')) {
+                const dropdowns = document.getElementsByClassName('dropdown');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
                 }
             }
-        }
-    };
-</script>
-
- </body>
-</html>
+        };
+    </script>
 </body>
 </html>
