@@ -50,7 +50,7 @@ echo "Selamat datang, " . $_SESSION['username'] . "!";
 
 <h1>Halaman Admin</h1>
 <div class="menu">
-    <a href="produk.php">PRODUK</a>
+    <a href="tambah.php">TAMBAH PRODUK</a>
     <a href="penjualan.php">PENJUALAN</a>
     <a href="detail_penjualan.php">DETAIL PENJUALAN</a>
 </div>
