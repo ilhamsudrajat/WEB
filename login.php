@@ -1,40 +1,45 @@
 <?php
 session_start();
+include 'koneksi.php';
 
-if (isset($_POST['login'])) {
-
-    include ('koneksi.php');
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    // Prepare and execute SQL statement
+    $stmt = $conn->prepare("SELECT id, username, password, role FROM tb_user WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->store_result();
 
-    $query = mysqli_query($conn, "SELECT password FROM tb_user WHERE username = '$username'");
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($id, $stored_username, $stored_password, $role);
+        $stmt->fetch();
 
-    $jumlah_data = mysqli_num_rows($query);
+        // Verify password
+        if (password_verify($password, $stored_password)) {
+            $_SESSION['id'] = $id;
+            $_SESSION['username'] = $stored_username;
+            $_SESSION['role'] = $role;
 
-    if ($jumlah_data > 0) {
-    $data = mysqli_fetch_array($query);
-    
-        if (password_verify($password,$data['password'])) {
-            $_SESSION['id'] = $data['id'];
-            $_SESSION['username'] = $data['username'];
-            $_SESSION['role'] = $data['role'];
-
-            if ($data['role'] === 'admin') {
-                header('Location: admin.php');
-            }else{
+            // Redirect based on role
+            if ($role === 'admin') {
+                header('Location: Admin/admin.php');
+            } else {
                 header('Location: index.php');
             }
+            exit();
         } else {
-            header('Location: login.php?eror=username atau password salah');
+            $error = "Username atau Password salah.";
         }
-    }else{
-        header('Location: login.php?eror=username atau password salah');
+    } else {
+        $error = "username atau password salah.";
     }
+
+    $stmt->close();
 }
 
-
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -86,34 +91,21 @@ if (isset($_POST['login'])) {
             font-size: 14px;
             cursor: pointer;
             margin: 2px;
-            text-decoration: none;
-        }
-        .login-container button a{
-            width: 100%;
-            padding: 10px;
-            background-color: #000;
-            color: white;
-            border: none;
-            font-size: 14px;
-            cursor: pointer;
-            margin: 2px;
-            text-decoration: none;
         }
     </style>
 </head>
 <body>
 <div class="login-container">
-<h1>Login</h1>
+    <h1>Login</h1>
     <?php if (isset($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
     <form action="" method="post">
         <label for="username">Username:</label><br>
         <input type="text" name="username" required><br>
         <label for="password">Password:</label><br>
         <input type="password" name="password" required><br>
-        <button type="submit" value="Login">login</button>
+        <button type="submit">Sign in</button>
     </form>
     <p>belum memiliki akun? <a href="register.php"> Sign up</a></p>
 </div>
-
 </body>
 </html>

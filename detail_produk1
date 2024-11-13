@@ -1,0 +1,20 @@
+<?php
+include("koneksi.php");
+$id = $_GET["id"];
+$query = mysqli_query($koneksi, "select * from tb_produk where id=$id");
+$produk = mysqli_fetch_array($query);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="foto_Produk/<?= $data['foto'] ?>">
+    <h1><?= $produk["nama"] ?></h1>
+    <h6><?= $produk["harga"] ?></h6>
+    <p><?= $produk["detail"] ?></p>
+</body>
+</html>

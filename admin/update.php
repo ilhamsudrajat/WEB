@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
     header("Location: ../login.php");
     exit();
 }
-if ($_SESSION ["role"] !="admin") {
+if ($_SESSION["role"] != "admin") {
     header("Location: ../login.php");
     exit();
 }
@@ -13,11 +13,12 @@ if ($_SESSION ["role"] !="admin") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Tambah Produk</title>
+    <title>Update Produk</title>
 
     <style>
         /* Reset default margins and paddings */
@@ -62,8 +63,8 @@ if ($_SESSION ["role"] !="admin") {
             margin-bottom: 5px;
         }
 
-        input[type="text"], 
-        input[type="number"], 
+        input[type="text"],
+        input[type="number"],
         input[type="file"] {
             padding: 10px;
             margin-bottom: 15px;
@@ -113,30 +114,45 @@ if ($_SESSION ["role"] !="admin") {
     </style>
 
 </head>
+
 <body>
 
     <div class="form-container">
-        <h1>Tambah Produk</h1>
-        <form action="proses_tambah.php" method="post" enctype="multipart/form-data">
+        <h1>Update Produk</h1>
+
+        <?php
+        include '../koneksi.php';
+        $id = $_GET['id'];
+        $query = mysqli_query($conn, "SELECT * FROM tb_produk WHERE id='$id'");
+        $produk = mysqli_fetch_array($query);
+        ?>
+        <form action="proses_update.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<?= htmlspecialchars($produk['id']) ?>">
+
             <div class="form-group">
                 <label for="nama">Nama</label>
-                <input type="text" name="nama" id="nama" required>
+                <input type="text" name="nama" id="nama" value="<?= htmlspecialchars($produk['nama']) ?>" required>
             </div>
+
             <div class="form-group">
                 <label for="harga">Harga</label>
-                <input type="number" name="harga" id="harga" required>
+                <input type="number" name="harga" id="harga" value="<?= htmlspecialchars($produk['harga']) ?>" required>
             </div>
+
             <div class="form-group">
                 <label for="foto">Foto</label>
-                <input type="file" name="foto" id="foto" required>
+                <input type="file" name="foto" id="foto">
             </div>
+
             <div class="form-group">
                 <label for="detail">Detail</label>
-                <input type="text" name="detail" id="detail" required>
+                <input type="text" name="detail" id="detail" value="<?= htmlspecialchars($produk['detail']) ?>" required>
             </div>
-            <button type="submit">Simpan</button>
+
+            <button type="submit">UPDATE</button>
         </form>
     </div>
 
 </body>
+
 </html>
